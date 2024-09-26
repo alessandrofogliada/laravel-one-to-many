@@ -6,7 +6,9 @@ use Faker\Generator as Faker;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Post;
+use App\Models\Category;
 use App\Functions\Helper;
+
 
 class PostTableSeeder extends Seeder
 {
@@ -21,6 +23,7 @@ class PostTableSeeder extends Seeder
             $new_post->slug = Helper::generateSlug($new_post, Post::class);
             $new_post->text = $faker->text(100);
             $new_post->reading_time = $faker->numberBetween(1,10);
+            $new_post->category_id = Category::inRandomOrder()->first()->id;
             $new_post->save();
         }
     }
