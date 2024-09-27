@@ -16,6 +16,7 @@ class Post extends Model
         'slug',
         'text',
         'reading_time',
+        'category_id',
     ];
 
     public function category(){

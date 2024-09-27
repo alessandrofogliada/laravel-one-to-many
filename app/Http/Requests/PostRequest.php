@@ -25,6 +25,7 @@ class PostRequest extends FormRequest
             'title'=>'required|min:3|max:255',
             'text'=>'required|min:5|max:255',
             'reading_time'=>'required|min:1|max:100',
+            'category_id'=>'exists|categories,id',
         ];
     }
 
@@ -33,6 +34,7 @@ class PostRequest extends FormRequest
             'title.required'=>'il campo deve avere almeno 3 caratteri',
             'text.required'=>'il campo deve avere almeno 5 caratteri',
             'reading_time.required'=>'il campo deve avere almeno 1 carattere',
+            'categories_id'=>'il campo è obblicatorio'
     ];
     }
 }

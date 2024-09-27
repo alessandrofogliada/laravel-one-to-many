@@ -31,6 +31,15 @@
             <input type="text" name="reading_time" reading_time="reading_time" value="{{$post->reading_time}}">
 
             <br>
+
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option value="disable">Seleziona una categoria</option>
+                @foreach ($categories as $category)
+                <option value="{{$category->id}}" @if ($post->category->id == $category->id) selected @endif>{{$category->name}}</option>
+                @endforeach
+            </select>
+
+            <br>
             
             <button type="submit" class="btn btn-primary">Aggiorna</button>
         </form>

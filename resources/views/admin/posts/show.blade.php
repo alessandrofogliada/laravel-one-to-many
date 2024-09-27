@@ -2,17 +2,23 @@
 
 @section('content')
 
-<h1>Dettaglio del post</h1> 
+<div>
+  <h1>Dettaglio del post</h1> 
 
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h3>Id: {{$post->id}}</h3>
-        <h3>Title: {{$post->title}}</h3>
-        <h3>Text: {{$post->text}}</h3>
-        <h3>Tempo di lettura: {{$post->reading_time}}</h3>
+  <div class="card" style="width: 18rem;">
+      <div class="card-body">
+          <strong >Id:</strong>{{$post->id}}
+          <br>
+          <strong>Title:</strong>{{$post->title}}
+          <br>
+          <strong>Text:</strong>{{$post->text}}
+          <br>
+          <strong>Tempo di lettura:</strong>{{$post->reading_time}}
+          <br>
+          <strong class="badge bg-primary">Categoria: {{$post->category->name}}</strong>
+      </div>
     </div>
-  </div>
-
+</div>
 
     
 @endsection
